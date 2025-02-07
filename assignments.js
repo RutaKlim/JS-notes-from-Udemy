@@ -121,10 +121,39 @@ console.log(
 // *******************************************
 
 // #1 - FUNCTIONS
+/*
 function describeCountry(country, population, capitalCity) {
-	const desCountry = `${country} has ${population} million and its capital city is ${capitalCity}`;
+	const desCountry = `${country} has ${population} million people and its capital city is ${capitalCity}.`;
 	return desCountry;
 }
 
-const descibeLithuania = describeCountry("Lithuania", 2.9, "Vilnius");
-console.log(descibeLithuania);
+const descLithuania = describeCountry("Lithuania", 2.9, "Vilnius");
+
+const descChina = describeCountry("China", 1441.1, "Beijing");
+
+const descKorea = describeCountry("South Korea", 51.71, "Seoul");
+
+console.log(descLithuania, descChina, descKorea);
+*/
+
+/*
+// #2 - FUNCTION DECLARATION
+//Function decleration:
+function percentageOfWorld1(population) {
+	return (population / 7900) * 100;
+}
+//Function expression:
+const percentageOfWorld2 = function (population) {
+	return (population / 7900) * 100;
+};
+//Outputs:
+const percLithuania1 = percentageOfWorld1(2.9);
+const percChina1 = percentageOfWorld1(1441.1);
+const percKorea1 = percentageOfWorld1(51.71);
+console.log(percLithuania1, percChina1, percKorea1);
+
+const percLithuania2 = percentageOfWorld2(2.9);
+const percChina2 = percentageOfWorld2(1441.1);
+const percKorea2 = percentageOfWorld2(51.71);
+console.log(percLithuania2, percChina2, percKorea2);
+*/
