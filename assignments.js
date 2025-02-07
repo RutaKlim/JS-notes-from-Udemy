@@ -1,3 +1,4 @@
+`use strict`;
 const country = "Lithuania";
 const continent = "Europe";
 const population = 2.9;
@@ -112,3 +113,18 @@ console.log(
 );
 // ----
 */
+
+// *******************************************
+// *******************************************S
+// PART 2 - JAVASCRIPT FUNDAMENTALS ASSIGNMENTS
+// *******************************************
+// *******************************************
+
+// #1 - FUNCTIONS
+function describeCountry(country, population, capitalCity) {
+	const desCountry = `${country} has ${population} million and its capital city is ${capitalCity}`;
+	return desCountry;
+}
+
+const descibeLithuania = describeCountry("Lithuania", 2.9, "Vilnius");
+console.log(descibeLithuania);
