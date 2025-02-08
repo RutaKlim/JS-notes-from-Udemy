@@ -14,3 +14,19 @@ const ruta = petNum(1, 1);
 console.log(ruta);
 */
 // -----
+
+/*
+// I wanted to practice 'Functions calling other functions':
+function sweetSlices(slices) {
+	return slices * 6;
+}
+
+function sweets(chocolate, gummy) {
+	const chocolatePieces = sweetSlices(chocolate);
+	const gummyPieces = sweetSlices(gummy);
+	const sharedSweets = `You get ${chocolatePieces} chocolates, and ${gummyPieces} gummys!`;
+	return sharedSweets;
+}
+
+console.log(sweets(3, 2));
+*/

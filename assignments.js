@@ -157,3 +157,28 @@ const percChina2 = percentageOfWorld2(1441.1);
 const percKorea2 = percentageOfWorld2(51.71);
 console.log(percLithuania2, percChina2, percKorea2);
 */
+
+/*
+// #3 - ARROW FUNCTION
+const percentageOfWorld3 = (population) => (population / 7900) * 100;
+const percLithuania3 = percentageOfWorld3(2.9);
+const percChina3 = percentageOfWorld3(1441.1);
+const percKorea3 = percentageOfWorld3(51.71);
+console.log(percLithuania3, percChina3, percKorea3);
+*/
+
+/*
+// #4 - FUNCTIONS CALLING OTHER FUNCTIONS
+function populationPercentage(popuPercent) {
+	return (popuPercent / 7900) * 100;
+}
+function describePopulation(country, population) {
+	const countryPercent = populationPercentage(population);
+	const description = `${country} has ${population} million people, which is about ${countryPercent}% of the world.`;
+	return description;
+}
+
+console.log(describePopulation("Lithuania", 2.9));
+console.log(describePopulation("China", 1441.1));
+console.log(describePopulation("Korea", 51.71));
+*/
