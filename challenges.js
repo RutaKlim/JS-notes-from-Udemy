@@ -62,11 +62,14 @@ console.log(
 const calcAverage = (score1, score2, score3) => (score1 + score2 + score3) / 3;
 
 //Test 1:
-let scoreDolphins = calcAverage(44, 23, 71);
-let scoreKoalas = calcAverage(65, 54, 49);
+const scoreDolphins = calcAverage(44, 23, 71);
+const scoreKoalas = calcAverage(65, 54, 49);
 //Test 2:
 const scoreDolphins2 = calcAverage(85, 54, 41);
 const scoreKoalas2 = calcAverage(23, 34, 27);
+
+checkWinner(scoreDolphins, scoreKoalas);
+checkWinner(scoreDolphins2, scoreKoalas2);
 
 function checkWinner(avgDolphins, avgKoalas) {
 	if (avgDolphins >= 2 * avgKoalas) {
@@ -77,6 +80,22 @@ function checkWinner(avgDolphins, avgKoalas) {
 		console.log(`No team wins...`);
 	}
 }
-checkWinner(scoreDolphins, scoreKoalas);
-checkWinner(scoreDolphins2, scoreKoalas2);
+*/
+
+/*
+// CHALLENGE #2
+const calcTip = function (bill) {
+	return bill >= 50 && bill <= 300 ? bill * (15 / 100) : bill * (20 / 100);
+};
+
+const bills = [125, 555, 44];
+const tips = [
+	calcTip(bills[0]),
+	calcTip(bills[1]),
+	calcTip(bills[bills.length - 1]),
+];
+console.log(bills, tips);
+
+const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
+console.log(bills, tips, totals);
 */
