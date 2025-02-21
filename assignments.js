@@ -182,3 +182,49 @@ console.log(describePopulation("Lithuania", 2.9));
 console.log(describePopulation("China", 1441.1));
 console.log(describePopulation("Korea", 51.71));
 */
+/*
+// #5 - INTRODUCTION TO ARRAYS
+function percentageOfWorld1(population) {
+	return (population / 7900) * 100;
+}
+const populations = [2.9, 1441.1, 51.71, 12.7];
+console.log(populations);
+console.log(populations.length == 4);
+const percentages = [
+	percentageOfWorld1(populations[0]),
+	percentageOfWorld1(populations[1]),
+	percentageOfWorld1(populations[2]),
+	percentageOfWorld1(populations[3]),
+];
+console.log(percentages);
+*/
+/*
+// #6 BASIC ARRAY OPERATIONS (METHODS)
+const neighbours = ["Latvia", "Belarus", "Poland", "Kaliningrad"];
+console.log(neighbours);
+neighbours.push("Utopia");
+console.log(neighbours);
+neighbours.pop();
+console.log(neighbours);
+console.log(
+	neighbours.includes("Germany")
+		? "Is probably a central european country"
+		: "Probably not a central european country :D"
+);
+if (!neighbours.includes("Germany")) {
+	console.log("Probably not a central european country : D");
+} //This was what they did, but I prefer what I did.
+neighbours[neighbours.indexOf("Kaliningrad")] = "Little Russia";
+console.log(neighbours);
+*/
+/*
+// #7 INTRODUCTION TO OBJECTS
+const myCountry = {
+	country: "Lithuania",
+	capital: "Vilnius",
+	language: "Lithuanian",
+	population: 2.9,
+	neighbours: ["Latvia", "Belarus", "Poland", "Kaliningrad"],
+};
+console.log(myCountry);
+*/

@@ -170,7 +170,6 @@ const ages = [
 ];
 console.log(ages);
 */
-
 /*
 // *****************************
 // BASIC ARRAY OPERATIONS
@@ -199,10 +198,10 @@ console.log(friends.includes("Katai"));
 if (friends.includes("Mark")) {
 	console.log("You have a friend called Mark");
 } else {
-		console.log("You don't have a friend called Mark");
+	console.log("You don't have a friend called Mark");
 }
 */
-
+/*
 // *****************************
 // OBJECTS
 // *****************************
@@ -212,3 +211,4 @@ const ruta = {
 	age: 2025 - 2006,
 	friends: ["Tommy", "Katai", "Jessy"],
 };
+*/
