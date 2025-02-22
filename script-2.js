@@ -212,3 +212,65 @@ const ruta = {
 	friends: ["Tommy", "Katai", "Jessy"],
 };
 */
+/*
+// *****************************
+// DOT vs BRACKET NOTATION
+// *****************************
+const ruta = {
+	firstName: "Ruta",
+	lastName: "Klimaviciute",
+	age: 2025 - 2006,
+	friends: ["Tommy", "Tiri", "Bob"],
+};
+console.log(ruta);
+
+console.log(ruta.lastName);
+console.log(ruta["lastName"]);
+
+const nameKey = "Name";
+console.log(ruta["first" + nameKey]);
+console.log(ruta["last" + nameKey]);
+
+// const interestedIn = prompt(
+// 	"What do you want to know about Ruta? Choose between firstName, lastName, age, job and friends."
+// );
+// console.log(interestedIn);
+
+// if (ruta[interestedIn]) {
+// 	console.log(ruta[interestedIn]);
+// } else {
+// 	console.log("That is an undefined value.");
+// }
+
+ruta.location = "England";
+ruta["cat"] = "Tommy";
+
+// 'Ruta has 3 friends, and her best friend is Tommy'
+const numFriends = ruta["friends".length];
+console.log(
+	`${ruta.firstName} has ${ruta.friends.length} friends, and her best friend is ${ruta.friends[0]}.`
+);
+*/
+// *****************************
+// OBJECT METHODS
+// *****************************
+const ruta = {
+	firstName: "Ruta",
+	lastName: "Klimaviciute",
+	birthYear: 2006,
+	position: "student",
+	friends: ["Tommy", "Tiri", "Bob"],
+	hasDriversLicense: false,
+
+	// calcAge: function (birthYear) {
+	// 	return 2025 - birthYear;
+	// },
+	calcAge: function () {
+		return 2025 - this.birthYear;
+	},
+};
+
+console.log(ruta.calcAge());
+console.log(ruta.calcAge(ruta.birthYear));
+// console.log(ruta.calcAge(2007));
+// console.log(ruta["calcAge"](2008));
