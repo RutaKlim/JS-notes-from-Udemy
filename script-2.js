@@ -251,6 +251,8 @@ console.log(
 	`${ruta.firstName} has ${ruta.friends.length} friends, and her best friend is ${ruta.friends[0]}.`
 );
 */
+
+/*
 // *****************************
 // OBJECT METHODS
 // *****************************
@@ -265,12 +267,34 @@ const ruta = {
 	// calcAge: function (birthYear) {
 	// 	return 2025 - birthYear;
 	// },
+
+	// calcAge: function () {
+	// 	return 2025 - this.birthYear;
+	// },
 	calcAge: function () {
-		return 2025 - this.birthYear;
+		this.age = 2025 - this.birthYear;
+		return this.age;
+	},
+
+	getSummary: function () {
+		return `${this.firstName} is a ${this.calcAge()}-year old ${
+			this.position
+		}, and she has ${this.hasDriversLicence ? "a" : "no"} driver's license.`;
 	},
 };
 
 console.log(ruta.calcAge());
-console.log(ruta.calcAge(ruta.birthYear));
+console.log(ruta.age);
+console.log(ruta.age);
+console.log(ruta.age);
 // console.log(ruta.calcAge(2007));
 // console.log(ruta["calcAge"](2008));
+
+// Challenge: 'Ruta is a 19-year old student, and she has no driver's license
+// console.log(
+// 	`${ruta.firstName} is a ${ruta.age}-year old ${ruta.position}, and she has ${
+// 		ruta.hasDriversLicence ? "a" : "no"
+// 	} driver's license.`
+// );
+console.log(ruta.getSummary());
+*/

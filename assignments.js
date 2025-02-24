@@ -226,15 +226,27 @@ const myCountry = {
 	language: "Lithuanian",
 	population: 2.9,
 	neighbours: ["Latvia", "Belarus", "Poland", "Kaliningrad"],
+	describe: function () {
+		console.log(
+			`${this.country} has ${this.population} million ${this.language}-speaking people, ${this.neighbours.length} neighbouring countries and a capital city called ${this.capital}.`
+		);
+	},
+	checkIsland: function () {
+		return (this.isIsland = this.neighbours.length === 0 ? true : false);
+	},
 };
 console.log(myCountry);
 
 // DOT VS BRACKET NOTATION
 console.log(
-	`${myCountry.country} has ${myCountry.population} million ${myCountry.language}-speaking people, ${myCountry.neighbours.length} neighbouring countries and a capital called ${myCountry.capital}`
+	`${myCountry.country} has ${myCountry.population} million ${myCountry.language}-speaking people, ${myCountry.neighbours.length} neighbouring countries and a capital called ${myCountry.capital}.`
 );
-myCountry.population += 2;
-console.log(myCountry.population);
-myCountry["population"] -= 2;
-console.log(myCountry.population);
+// myCountry.population += 2;
+// console.log(myCountry.population);
+// myCountry["population"] -= 2;
+// console.log(myCountry.population);
+
+// #8 OBJECT METHODS  task: to add a method to the myCountry Object called 'describe'
+myCountry.describe();
+console.log(myCountry.checkIsland());
 */
