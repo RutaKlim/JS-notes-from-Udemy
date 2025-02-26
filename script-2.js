@@ -298,3 +298,58 @@ console.log(ruta.age);
 // );
 console.log(ruta.getSummary());
 */
+/*
+// *****************************
+// ITERATION: THE FOR LOOP
+// *****************************
+// console.log("Lifting weights repetition 1");
+
+// for loop keeps running while condition is TRUE
+for (let rep = 1; rep <= 10; rep++) {
+	console.log(`Lifting weights repetition ${rep}`);
+}
+	*/
+
+/*
+// *****************************
+// LOOPING ARRAYS, BREAKING AND CONTINUING
+// *****************************
+const ruta = [
+	"Ruta",
+	"Klimaviciute",
+	2025 - 2006,
+	"student",
+	["Tommy", "Rapolas", "Lougi"],
+];
+const types = [];
+
+for (let i = 0; i < ruta.length; i++) {
+	// Reading from ruta array:
+	console.log(ruta[i], typeof ruta[i]);
+
+	// Filling gtypes array:
+	//types[i] = typeof ruta[i];
+	types.push(typeof ruta[i]);
+}
+
+console.log(types);
+
+const years = [2000, 2002, 2004, 2006];
+const ages = [];
+for (let i = 0; i < years.length; i++) {
+	ages.push(2025 - years[i]);
+}
+console.log(ages);
+
+// CONTINUE AND BREAK
+console.log(" --- ONLY STRINGS ---");
+for (let i = 0; i < ruta.length; i++) {
+	if (typeof ruta[i] !== "string") continue;
+	console.log(ruta[i], typeof ruta[i]);
+}
+console.log(" --- BREAK WITH NUMBER ---");
+for (let i = 0; i < ruta.length; i++) {
+	if (typeof ruta[i] === "number") break;
+	console.log(ruta[i], typeof ruta[i]);
+}
+*/

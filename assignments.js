@@ -250,3 +250,20 @@ console.log(
 myCountry.describe();
 console.log(myCountry.checkIsland());
 */
+
+/*
+// ITERATION: THE FOR LOOP
+for (let i = 1; i <= 50; i++) {
+	console.log(`Voter number ${i} is currently voting`);
+}
+*/
+
+/*
+// LOOPING ARRAYS, BREAKING AND CONTINUING
+const populations = [2.9, 1441.1, 51.71, 12.7];
+const percentages2 = [];
+for (i = 0; i < populations.length; i++) {
+	percentages2.push((populations[i] / 7900) * 100);
+}
+console.log(percentages2);
+*/
