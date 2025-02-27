@@ -353,3 +353,48 @@ for (let i = 0; i < ruta.length; i++) {
 	console.log(ruta[i], typeof ruta[i]);
 }
 */
+/*
+// *****************************
+// LOOPING BACKWARDS AND LOOPS IN LOOPS
+// *****************************
+const ruta = [
+	"Ruta",
+	"Klimaviciute",
+	2025 - 2006,
+	"student",
+	["Tommy", "Rapolas", "Lougi"],
+];
+
+// looping the array backwards
+for (let i = ruta.length - 1; i >= 0; i--) {
+	console.log(i, ruta[i]);
+}
+//loop in a loop
+for (let exercise = 1; exercise <= 3; exercise++) {
+	console.log(`----------Starting exercise ${exercise}`);
+
+	for (let rep = 1; rep <= 5; rep++) {
+		console.log(`#${exercise} Lifting weight repetition ${rep}`);
+	}
+}
+*/
+/*
+// *****************************
+// THE WHILE LOOP
+// *****************************
+let rep = 1;
+while (rep <= 10) {
+	console.log(`Lifting weights repetition ${rep}`);
+	rep++;
+}
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+
+while (dice !== 6) {
+	console.log(`You rolled a ${dice}`);
+	dice = Math.trunc(Math.random() * 6) + 1;
+	if (dice === 6) {
+		console.log("You rolled a 6!!!!");
+	}
+}
+*/

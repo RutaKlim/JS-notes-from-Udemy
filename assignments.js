@@ -267,3 +267,28 @@ for (i = 0; i < populations.length; i++) {
 }
 console.log(percentages2);
 */
+/*
+// LOOPING ARRAYS, BREAKING AND CONTINUING
+const listOfNeighbours = [
+	["Canada", "Mexico"],
+	["Spain"],
+	["Norway", "Sweden", "Russia"],
+];
+for (let i = 0; i < listOfNeighbours.length; i++) {
+	for (let j = 0; j < listOfNeighbours[i].length; j++) {
+		console.log(`Neighbour: ${listOfNeighbours[i][j]}`);
+	}
+}
+*/
+
+/*
+// THE WHILE LOOP
+const populations = [2.9, 1441.1, 51.71, 12.7];
+const percentages3 = [];
+let i = 0;
+while (i < populations.length) {
+	percentages3.push((populations[i] / 7900) * 100);
+	i++;
+}
+console.log(percentages3);
+*/
