@@ -13,7 +13,7 @@ function petNum(cat, dog) {
 const ruta = petNum(1, 1);
 console.log(ruta);
 */
-// ---------------------------------------
+// ---------------------------------------------
 
 /*
 // I wanted to practice 'Functions calling other functions':
@@ -46,7 +46,7 @@ function calcDrink(volume, mass) {
 calcDrink(1200, 50);
 */
 /*
-// -----------------------------------
+// ---------------------------------------------
 // I came across this question in my maths paper and so I wanted to try program it as it reminded me of the for loop i did not long ago :)
 // P(n) = (n, k=0 : k^3 ) - (n-1, k=0 : k^3) where n is a positive integer
 // This was a question in the sigma notation format but i couldn't code that <,:D But basically n is the position of the last term, so the amount of terms in a way, and that is the input as well. The k=0 is the position of the first term, so this series will start with k=0, then k=1, k=2, k=3. Then the k^3 is the nth term rule.
@@ -64,5 +64,6 @@ const seriesSolution = function (n) {
 };
 console.log(seriesSolution(3));
 console.log(seriesSolution(10));
-// it was quite actually really simple, but I was wondering if I could have added another function in the loop so I would have had to repeat that code. But this code is only for that specific question tho.
+// it was actually really simple, but I was wondering if I could have added another function in the loop so I would have had to repeat that code. But this code is only for that specific question tho.
 */
+// ---------------------------------------------
