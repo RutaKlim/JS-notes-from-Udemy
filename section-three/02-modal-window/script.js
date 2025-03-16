@@ -18,7 +18,6 @@ const closeModal = function () {
 for (let i = 0; i < openModalBtn.length; i++) {
   openModalBtn[i].addEventListener('click', openModal);
 }
-
 closeModalBtn.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal);
 // keypress event
