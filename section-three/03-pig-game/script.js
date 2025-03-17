@@ -12,14 +12,26 @@ const rollBtn = document.querySelector('.btn--roll');
 const holdBtn = document.querySelector('.btn--hold');
 
 // Starting conditions
-score0El.textContent = 0;
-score1El.textContent = 0;
-diceEl.classList.add('hidden');
-const scores = [0, 0];
-let activePlayer = Math.trunc(Math.random());
-let currentScore = 0;
-let playing = true;
+// Function to restart game
+let scores, currentScore, activePlayer, playing;
+const init = function () {
+  scores = [0, 0];
+  activePlayer = 0;
+  currentScore = 0;
+  playing = true;
 
+  score0El.textContent = 0;
+  score1El.textContent = 0;
+  current0El.textContent = 0;
+  current1El.textContent = 0;
+
+  diceEl.classList.add('hidden');
+  player0El.classList.remove('player--winner');
+  player1El.classList.remove('player--winner');
+  player0El.classList.add('player--active');
+  player1El.classList.remove('player--active');
+};
+init();
 // Function to switch player
 const switchPlayer = function () {
   document.getElementById(`current--${activePlayer}`).textContent = 0;
@@ -69,5 +81,34 @@ holdBtn.addEventListener('click', function () {
       playing = true;
       switchPlayer();
     }
+  }
+});
+
+// New Game - reseting the game
+newBtn.addEventListener('click', init);
+
+// Rules
+const ruleBtn = document.querySelector('.btn--rules');
+const overlay = document.querySelector('.modal-overlay');
+const ruleCross = document.querySelector('.rules-cross');
+const rulesBox = document.querySelector('.rules');
+
+// Opening rules
+ruleBtn.addEventListener('click', function () {
+  rulesBox.classList.remove('hidden');
+  overlay.classList.remove('hidden');
+});
+
+// Closing rules
+const closeRules = function () {
+  rulesBox.classList.add('hidden');
+  overlay.classList.add('hidden');
+};
+ruleCross.addEventListener('click', closeRules);
+overlay.addEventListener('click', closeRules);
+
+document.addEventListener('keydown', function (keyLetter) {
+  if (keyLetter.key === 'Escape') {
+    closeRules();
   }
 });

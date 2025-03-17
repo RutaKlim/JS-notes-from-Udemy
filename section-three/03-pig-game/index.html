@@ -9,9 +9,10 @@
   </head>
   <body>
     <main>
+      <div class="pig-title">Pig game</div>
       <section class="player player--0 player--active">
         <h2 class="name" id="name--0">Player 1</h2>
-        <p class="score" id="score--0">43</p>
+        <p class="score" id="score--0">0</p>
         <div class="current">
           <p class="current-label">Current</p>
           <p class="current-score" id="current--0">0</p>
@@ -19,7 +20,7 @@
       </section>
       <section class="player player--1">
         <h2 class="name" id="name--1">Player 2</h2>
-        <p class="score" id="score--1">24</p>
+        <p class="score" id="score--1">0</p>
         <div class="current">
           <p class="current-label">Current</p>
           <p class="current-score" id="current--1">0</p>
@@ -28,9 +29,19 @@
 
       <img src="dice-5.png" alt="Playing dice" class="dice" />
       <button class="btn btn--new">🔄 New game</button>
-      <button class="btn btn--roll">🎲 Roll dice</button>
-      <button class="btn btn--hold">📥 Hold</button>
+      <button class="btn btn-position btn--rules">📖 Rules</button>
+      <button class="btn btn-position btn--roll">🎲 Roll dice</button>
+      <button class="btn btn-position btn--hold">📥 Hold</button>
     </main>
+    <div class="modal-overlay hidden"></div>
+    <div class="rules hidden">
+      <div class="rules-cross">❌</div>
+      <ul>
+        <li>1. Roll the dice</li>
+        <li>2. Hold your score</li>
+        <li>3. First player to reach 100 wins!</li>
+      </ul>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
