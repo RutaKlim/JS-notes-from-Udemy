@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 /*
 // ****************************
@@ -117,7 +117,7 @@ const pencil = {
 console.log(pencil.totBooks());
 console.log(pencil.totPencils());
 */
-
+/*
 // ****************************
 // #4 REGULAR FUNCTIONS VS ARROW FUNCTIONS
 // ****************************
@@ -157,3 +157,51 @@ addExpr(2, 5);
 addExpr(2, 5, 8, 12);
 
 var addArrow = (a, b) => a + b;
+*/
+/*
+// ****************************
+// #5 MEMORY MANAGEMENT: PRIMITIVES VS OBJECTS
+// ****************************
+const ruta1 = {
+  firstName: "Ruta",
+  lastName: "Klimaviciute",
+  age: 18,
+};
+
+function oldPerson(originalName, newLastName) {
+  originalName.lastName = newLastName;
+  return originalName;
+}
+
+const oldRuta = oldPerson(ruta1, "Klimaviciene");
+// const oldRuta = ruta;
+// oldRuta.lastName = "Klimaviciene";
+console.log("Before:", ruta1);
+console.log("After:", oldRuta);
+
+const ruta2 = {
+  firstName: "Ruta",
+  lastName: "Klimaviciute",
+  age: 18,
+  food: ["tirimasu", "pizza", "sweets"],
+};
+
+// Shalloww copy:
+const rutaCopy = { ...ruta2 };
+rutaCopy.age = 19;
+
+rutaCopy.food.push("watermelon");
+rutaCopy.food.push("ice-cream");
+
+console.log("Before:", ruta2);
+console.log("After:", rutaCopy);
+
+// Deep copy
+const rutaClone = structuredClone(ruta2);
+rutaClone.food.push("watermelon", "apple pie");
+console.log("Before:", ruta2);
+console.log("After:", rutaClone);
+*/
+// ****************************
+// #6
+// ****************************
