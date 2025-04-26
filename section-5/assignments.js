@@ -226,7 +226,7 @@ const books = [
 ];
 
 /*
-// 01 DESTRUCTURING ARRAYS
+// DESTRUCTURING ARRAYS
 // 1.1
 const [firstBook, secondBook] = books;
 console.log(firstBook, secondBook);
@@ -245,4 +245,43 @@ const ratingStars = [63405, 1808];
 const [fiveStarRating = 0, oneStarRatings = 0, threeStarRatings = 0] =
   ratingStars;
 console.log(fiveStarRating, oneStarRatings, threeStarRatings);
+*/
+
+/*
+// DESTRUCTURING OBJECTS
+// 2.1
+const { title, author, ISBN } = books[0];
+console.log(title, author, ISBN);
+// 2.2
+const { keywords: tag } = books[0];
+console.log(tag);
+// 2.3
+const { language, programmingLanguage = 'unknown' } = books[6];
+console.log(language, programmingLanguage);
+// 2.4
+let bookTitle = 'unknown';
+let bookAuthor = 'unknown';
+({ title: bookTitle, author: bookAuthor } = books[0]);
+console.log(bookTitle, bookAuthor);
+// 2.5
+const {
+  thirdParty: {
+    goodreads: { rating: bookRating },
+  },
+} = books[0];
+console.log(bookRating);
+// 2.6
+const printBookInfo = function ({
+  title = 'title unknown',
+  author = 'author unknown',
+  year = 'year unknown',
+}) {
+  console.log(`${title} by ${author}, ${year}`);
+};
+
+printBookInfo({
+  title: 'Algorithms',
+  author: 'Robert Sedgewick',
+  year: '2011',
+});
 */

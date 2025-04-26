@@ -21,7 +21,7 @@ const mexicanFoods = new Set([
   'avocado',
   'garlic',
 ]);
-
+/*
 // Data needed for first part of the section
 const restaurant = {
   name: 'Classico Italiano',
@@ -49,8 +49,12 @@ const restaurant = {
     },
   },
 };
+*/
+
 /*
-// 01 DESTRUCTURING AN ARRAY
+// **************************************
+// 01 DESTRUCTURING ARRAYS
+// **************************************
 const arr = [2, 3, 4];
 const a = arr[0];
 const b = arr[1];
@@ -90,3 +94,90 @@ console.log(i, j, k);
 const [p = 1, q = 1, r = 1] = [8, 9];
 console.log(p, q, r);
 */
+
+/*
+// **************************************
+// 02 - DESTRUCTURING OBJECTS
+// **************************************
+
+const { nameRestaurant, openingHours, categories } = restaurant;
+console.log(nameRestaurant, openingHours, categories);
+
+const {
+  nameRestaurant: restaurantName,
+  openingHours: hours,
+  categories: tags,
+} = restaurant;
+console.log(restaurantName, hours, tags);
+
+// Default variables
+const { menu = [], starterMenu: starters = [] } = restaurant;
+console.log(menu, starters);
+
+// Mutating variables
+let a = 143;
+let b = 127;
+console.log(a, b);
+const obj = { a: 18, b: 21, c: 3 };
+({ a, b } = obj);
+console.log(a, b);
+
+// Nested objects
+const {
+  fri: { open: o, close: c },
+} = openingHours;
+console.log(o, c);
+// Another example of nested objects
+const {
+  openingHours: {
+    thu: { open: thuOpen, close: thuClose },
+  },
+} = restaurant;
+console.log(thuOpen, thuClose);
+
+restaurant.orderDelivery({
+  time: '22:30',
+  address: 'Via del Sole, 21',
+  mainIndex: 2,
+  starterIndex: 2,
+});
+*/
+
+// Data needed for first part of the section
+const restaurant = {
+  nameRestaurant: 'Classico Italiano',
+  location: 'Via Angelo Tavanti 23, Firenze, Italy',
+  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+
+  orderDelivery: function ({
+    time = '00:00',
+    address,
+    mainIndex = 0,
+    starterIndex = 0,
+  }) {
+    console.log(
+      `Order recieved! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}.`
+    );
+  },
+
+  openingHours: {
+    thu: {
+      open: 12,
+      close: 22,
+    },
+    fri: {
+      open: 11,
+      close: 23,
+    },
+    sat: {
+      open: 0, // Open 24 hours
+      close: 24,
+    },
+  },
+};
