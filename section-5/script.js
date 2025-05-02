@@ -143,6 +143,53 @@ restaurant.orderDelivery({
 });
 */
 
+/*
+// **************************************
+// 02 - THE SPREAD OPERATOR
+// **************************************
+// Notes: 'const []' is used for destructuring arrays, then 'const {}' is used for objects
+const arr = [1, 2, 7];
+const [firstB, secondB, thirdB] = arr;
+const badNewArray = [2, 1, firstB, secondB, thirdB];
+console.log(badNewArray);
+const newArr = [1, 2, ...arr];
+console.log(newArr);
+console.log(...newArr);
+
+const newMenu = [...restaurant.mainMenu, 'icecream'];
+console.log(newMenu);
+// takes all the elements from the array, and doesn't create variables
+
+// Copy array
+const mainMenuCopy = [...restaurant.mainMenu];
+
+// Join 2 arrays or more
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+console.log(menu);
+
+// iterables are arrays, strings, maps sets, BUT NOT objects.
+// Can also add the spread oeprator to strings
+const str = 'Ruta';
+const letters = [...str, '', '.K'];
+console.log(letters);
+// console.log(`the name is spelt ${[letters]}`);
+
+/*
+const ingredients = [
+  prompt("Let's make pasta! Ingredient 1?"),
+  prompt("Let's make pasta! Ingredient 2?"),
+  prompt("Let's make pasta! Ingredient 3?"),
+];
+console.log(ingredients);
+restaurant.orderPasta(...ingredients);
+
+// Objects
+const newRestaurant = { ...restaurant, founder: 'Tommy' };
+console.log(newRestaurant);
+
+const restaurantCopy = { ...restaurant };
+*/
+
 // Data needed for first part of the section
 const restaurant = {
   nameRestaurant: 'Classico Italiano',
@@ -179,5 +226,9 @@ const restaurant = {
       open: 0, // Open 24 hours
       close: 24,
     },
+  },
+
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(`Here is your delicious pasta with ${ing1}, ${ing2}, ${ing3}`);
   },
 };
