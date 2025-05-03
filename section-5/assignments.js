@@ -295,3 +295,32 @@ const spellWord = function (word) {
   console.log(...word);
 };
 // spellWord('JavaScript');
+
+// REST PATTERN AND PARAMETERS
+//4.1
+const [mainKeywords, ...rest] = books[0].keywords;
+//console.log(mainKeywords, rest);
+//4.2
+const { publisher: bookPublisher, ...restOfTheBooks } = books[1];
+// console.log(bookPublisher, restOfTheBooks);
+// 4.3
+const printBookAuthorsCount = function (title, ...authors) {
+  console.log(`The book "£{title}" has ${authors.length} authors`);
+};
+// printBookAuthorsCount('Algorithms', 'Robert Sedgewick', 'Kevin Wayne');
+
+// SHORT CIRCUITING (&& AND ||)
+// 5.1
+const hasExamplesInJava = function (book) {
+  console.log(book.programmingLanguage === 'Java' || 'no data available');
+};
+//hasExamplesInJava(books[0]);
+//hasExamplesInJava(books[1]);
+// 5.2
+/*
+for (let i = 0; i < books.length; i++) {
+  console.log(
+    books[i].onlineContent && `"${books[i].title}" provides online content`
+  );
+};
+*/

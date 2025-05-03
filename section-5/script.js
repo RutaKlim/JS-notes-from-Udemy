@@ -189,7 +189,43 @@ console.log(newRestaurant);
 
 const restaurantCopy = { ...restaurant };
 */
+/*
+// **************************************
+// 03 - REST PATTERN AND PARAMETERS
+// **************************************
+// 01 DESTRUCTURING
+// SPREAD, because on RIGHT side of
+const arr = [1, 2, ...[3, 4]];
+// REST, because on LEFT side of
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(a, b, others);
 
+const [pizza, , risotto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+  ];
+  console.log(pizza, risotto, otherFood);
+  
+  // Objects
+  const { sat, ...weekdays } = restaurant.openingHours;
+  console.log(weekdays);
+  
+  // 02 FUNCTIONS
+  const add = function (...numbs) {
+    let addedUp = 0;
+    for (let i = 0; i < numbs.length; i++) {
+      addedUp += numbs[i];
+      }
+      console.log(addedUp);
+      };
+      
+      add(2, 3);
+      add(5, 3, 7, 2);
+      const x = [23, 5, 7];
+      add(...x);
+      
+      restaurant.orderPizza('cheese', 'sausage', 'onion', 'spinach', 'meat');
+      */
 // Data needed for first part of the section
 const restaurant = {
   nameRestaurant: 'Classico Italiano',
@@ -231,4 +267,35 @@ const restaurant = {
   orderPasta: function (ing1, ing2, ing3) {
     console.log(`Here is your delicious pasta with ${ing1}, ${ing2}, ${ing3}`);
   },
+
+  orderPizza: function (mainIngredient, ...otherIngredients) {
+    console.log(mainIngredient);
+    console.log(otherIngredients);
+  },
 };
+/*
+// **************************************
+// 04 - SHORT CIRCUITING (&& AND ||)
+// **************************************
+// The OR operator (||) an use any data type , return ANY data type, short-circuiting
+console.log(3 || 'Ruta');
+console.log('' || 'Ruta');
+console.log(true || 0);
+console.log(undefined || null);
+console.log(undefined || 0 || '' || 'Hello' || 21 || null);
+// OR operator
+restaurant.numGuests = 23;
+const guest1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guest1);
+const guest2 = restaurant.numGuests || 10;
+console.log(guest2);
+// AND operator
+console.log(0 && 'Ruta');
+console.log(3 && 'Ruta');
+console.log('Labas' && 72 && null && 'Ruta');
+// Practical example
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('cheese', 'spinach');
+}
+restaurant.orderPizza && restaurant.orderPizza('cheese', 'spinach');
+*/
