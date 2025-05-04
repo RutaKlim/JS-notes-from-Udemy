@@ -226,6 +226,69 @@ const [pizza, , risotto, ...otherFood] = [
       
       restaurant.orderPizza('cheese', 'sausage', 'onion', 'spinach', 'meat');
       */
+/*
+     // **************************************
+// 04 - SHORT CIRCUITING (&& AND ||)
+// **************************************
+// The OR operator (||) an use any data type , return ANY data type, short-circuiting
+console.log(3 || 'Ruta');
+console.log('' || 'Ruta');
+console.log(true || 0);
+console.log(undefined || null);
+console.log(undefined || 0 || '' || 'Hello' || 21 || null);
+// OR operator
+restaurant.numGuests = 23;
+const guest1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guest1);
+const guest2 = restaurant.numGuests || 10;
+console.log(guest2);
+// AND operator
+console.log(0 && 'Ruta');
+console.log(3 && 'Ruta');
+console.log('Labas' && 72 && null && 'Ruta');
+// Practical example
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('cheese', 'spinach');
+}
+restaurant.orderPizza && restaurant.orderPizza('cheese', 'spinach');
+*/
+/*
+// **************************************
+// 05 - THE NULLISH COALESCING OPERATOR (??)
+// **************************************
+restaurant.numGuests = 0;
+const guests2 = restaurant.numGuests || 10;
+console.log(guests2);
+
+const guestCorrect = restaurant.numGuests ?? 10;
+console.log(guestCorrect);
+*/
+/*
+// **************************************
+// 06 - LOGICAL ASSIGNMENT OPERATORS
+// **************************************
+const rest1 = {
+  nameRest: 'Capri',
+  numGuests: 20,
+};
+const rest2 = {
+  nameRest: 'La Piazza',
+  owner: 'Giovanni Rossi',
+};
+// OR assignment operator
+// rest1.numGuests = rest1.numGuests || 10;
+// rest2.numGuests = rest2.numGuests || 10;
+// rest1.numGuests ||= 10;
+// rest2.numGuests ||= 10;
+rest1.numGuests ??= 10;
+rest2.numGuests ??= 10;
+// To make the owner anonymous
+rest1.owner &&= 'anonymous';
+rest2.owner &&= 'anonymous';
+
+console.log(rest1);
+console.log(rest2);
+*/
 // Data needed for first part of the section
 const restaurant = {
   nameRestaurant: 'Classico Italiano',
@@ -273,29 +336,3 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
-/*
-// **************************************
-// 04 - SHORT CIRCUITING (&& AND ||)
-// **************************************
-// The OR operator (||) an use any data type , return ANY data type, short-circuiting
-console.log(3 || 'Ruta');
-console.log('' || 'Ruta');
-console.log(true || 0);
-console.log(undefined || null);
-console.log(undefined || 0 || '' || 'Hello' || 21 || null);
-// OR operator
-restaurant.numGuests = 23;
-const guest1 = restaurant.numGuests ? restaurant.numGuests : 10;
-console.log(guest1);
-const guest2 = restaurant.numGuests || 10;
-console.log(guest2);
-// AND operator
-console.log(0 && 'Ruta');
-console.log(3 && 'Ruta');
-console.log('Labas' && 72 && null && 'Ruta');
-// Practical example
-if (restaurant.orderPizza) {
-  restaurant.orderPizza('cheese', 'spinach');
-}
-restaurant.orderPizza && restaurant.orderPizza('cheese', 'spinach');
-*/
