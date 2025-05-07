@@ -1,5 +1,6 @@
 'use strict';
 
+const pet = { cat: 'Tommy' };
 const ruta = {
   myName: 'Ruta',
   age: 18,
@@ -13,8 +14,8 @@ const ruta = {
       colour: 'brown',
     },
   },
+  pet,
 };
-
 // Destructuring an array - making multiple variables:
 const [first, , third] = ruta.hobbies;
 // console.log(first, third);
@@ -32,10 +33,10 @@ const {
 /*
 console.log(
   `Ruta's hair colour is ${rutasHairColour} and her eyes are ${rutasEyeColour}.`
-);
-console.log(
-  `${
-    rutasHairColour === rutasEyeColour ? 'Both are brown' : 'Both are not brown.'
-  }`
-);
-*/
+  );
+  console.log(
+    `${
+      rutasHairColour === rutasEyeColour ? 'Both are brown' : 'Both are not brown.'
+      }`
+      );
+      */
