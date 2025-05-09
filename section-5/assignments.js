@@ -396,3 +396,10 @@ const newBook2 = {
   author: ['Brian W. Kernighan', 'Dennis M. Ritchie'],
   pages,
 };
+
+// OPTIONAL CHAINING (?.)
+function getFirstKeyword(item) {
+  console.log(item.keywords?.[0]);
+}
+getFirstKeyword(books[0]);
+getFirstKeyword(newBook2);

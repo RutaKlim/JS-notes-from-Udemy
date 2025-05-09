@@ -352,3 +352,30 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
+/*
+// **************************************
+// 08 - OPTIONAL CHAINING (?.)
+// **************************************
+if (restaurant.openingHours && restaurant.openingHours.mon)
+  console.log(restaurant.openingHours.mon.open);
+
+// with optional chaining
+console.log(restaurant.openingHours.mon?.open);
+console.log(restaurant.openingHours?.mon?.open);
+
+// Example
+const days = ['Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat', 'Sun'];
+for (const day of days) {
+  const open = restaurant.openingHours[day]?.open ?? 'closed';
+  console.log(`On ${day}, we open at ${open}`);
+}
+
+// Methods
+console.log(restaurant.order?.(0, 1) ?? 'Method does not exist');
+console.log(restaurant.risoto?.(0, 1) ?? 'Method does not exist');
+
+// Arrays
+const users = [{ name: 'ruta', lastName: 'Klimaviciute' }];
+console.log(users[0]?.name ?? 'User array empty');
+console.log(users[2]?.name ?? 'User array empty');
+*/
