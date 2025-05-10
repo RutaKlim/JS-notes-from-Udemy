@@ -307,7 +307,7 @@ console.log([...menu.entries()]);
 // **************************************
 // 07 - ENHANCED OBJECT LITERALS
 // **************************************
-const weekdays = ['Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat', 'Sun'];
+const weekdays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 const openingHours = {
   [weekdays[3]]: {
     open: 12,
@@ -378,4 +378,29 @@ console.log(restaurant.risoto?.(0, 1) ?? 'Method does not exist');
 const users = [{ name: 'ruta', lastName: 'Klimaviciute' }];
 console.log(users[0]?.name ?? 'User array empty');
 console.log(users[2]?.name ?? 'User array empty');
+*/
+/*
+// **************************************
+// 09 - LOOPING OBJECTS: OBJECT KEYS, VALUES, AND ENTRIES
+// **************************************
+// property NAMES
+const properties = Object.keys(openingHours);
+console.log(properties);
+let openStr = `We are open ${properties.length} days: `;
+for (const day of Object.keys(openingHours)) {
+  openStr += `${day}${properties[properties.length - 1] !== day ? `,` : `.`} `;
+}
+console.log(openStr);
+
+// Property VALUES
+const values = Object.values(openingHours);
+console.log(values);
+
+// Entire object
+const entries = Object.entries(openingHours);
+console.log(entries);
+
+for (const [key, { open, close }] of entries) {
+  console.log(`On ${key} we open at ${open} and close at ${close}.`);
+}
 */

@@ -401,5 +401,25 @@ const newBook2 = {
 function getFirstKeyword(item) {
   console.log(item.keywords?.[0]);
 }
-getFirstKeyword(books[0]);
-getFirstKeyword(newBook2);
+// getFirstKeyword(books[0]);
+// getFirstKeyword(newBook2);
+
+// LOOPING OBJECTS: OBJECT KEYS, VALUES, AND ENTRIES
+// 11.1
+const entries = [];
+for (let key of Object.keys(books[0].thirdParty.goodreads)) {
+  entries.push([key]);
+}
+// console.log(entries);
+// 11.2
+for (const [index, value] of Object.values(
+  books[0].thirdParty.goodreads
+).entries()) {
+  entries[index].push(value);
+}
+// 11.3
+const entries2 = Object.entries(books[0].thirdParty.goodreads);
+// console.log(entries2);
+// 11.4
+// console.log(entries);
+// console.log(entries2);

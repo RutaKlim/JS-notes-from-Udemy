@@ -16,6 +16,7 @@ const ruta = {
   },
   pet,
 };
+
 // Destructuring an array - making multiple variables:
 const [first, , third] = ruta.hobbies;
 // console.log(first, third);
@@ -40,3 +41,7 @@ console.log(
       }`
       );
       */
+
+// console.log(Object.keys(ruta.appearance));
+// console.log(Object.values(ruta.appearance));
+// console.log(Object.entries(ruta.appearance));
