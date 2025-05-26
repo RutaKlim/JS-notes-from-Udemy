@@ -4,23 +4,6 @@
 const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
-const italianFoods = new Set([
-  'pasta',
-  'gnocchi',
-  'tomatoes',
-  'olive oil',
-  'garlic',
-  'basil',
-]);
-
-const mexicanFoods = new Set([
-  'tortillas',
-  'beans',
-  'rice',
-  'tomatoes',
-  'avocado',
-  'garlic',
-]);
 /*
 // Data needed for first part of the section
 const restaurant = {
@@ -305,8 +288,96 @@ console.log([...menu.entries()]);
 */
 
 // **************************************
-// 07 - ENHANCED OBJECT LITERALS
+// 08 - ENHANCED OBJECT LITERALS
 // **************************************
+/*
+// **************************************
+// 09 - OPTIONAL CHAINING (?.)
+// **************************************
+if (restaurant.openingHours && restaurant.openingHours.mon)
+  console.log(restaurant.openingHours.mon.open);
+
+// with optional chaining
+console.log(restaurant.openingHours.mon?.open);
+console.log(restaurant.openingHours?.mon?.open);
+
+// Example
+const days = ['Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat', 'Sun'];
+for (const day of days) {
+  const open = restaurant.openingHours[day]?.open ?? 'closed';
+  console.log(`On ${day}, we open at ${open}`);
+}
+
+// Methods
+console.log(restaurant.order?.(0, 1) ?? 'Method does not exist');
+console.log(restaurant.risoto?.(0, 1) ?? 'Method does not exist');
+
+// Arrays
+const users = [{ name: 'ruta', lastName: 'Klimaviciute' }];
+console.log(users[0]?.name ?? 'User array empty');
+console.log(users[2]?.name ?? 'User array empty');
+*/
+/*
+// **************************************
+// 10 - LOOPING OBJECTS: OBJECT KEYS, VALUES, AND ENTRIES
+// **************************************
+// property NAMES
+const properties = Object.keys(openingHours);
+console.log(properties);
+let openStr = `We are open ${properties.length} days: `;
+for (const day of Object.keys(openingHours)) {
+  openStr += `${day}${properties[properties.length - 1] !== day ? `,` : `.`} `;
+}
+console.log(openStr);
+
+// Property VALUES
+const values = Object.values(openingHours);
+console.log(values);
+
+// Entire object
+const entries = Object.entries(openingHours);
+console.log(entries);
+
+for (const [key, { open, close }] of entries) {
+  console.log(`On ${key} we open at ${open} and close at ${close}.`);
+  }
+  */
+
+/*
+// **************************************
+// 11 - SETS
+// **************************************
+const orderSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Risotto',
+  'Pasta',
+  'Pizza',
+  ]);
+  console.log(new Set('Ruta'));
+  console.log(orderSet.size);
+  console.log(orderSet.has('Bread'));
+  console.log(orderSet.has('Pizza'));
+  orderSet.add('Garlic Bread');
+  orderSet.add('Garlic Bread');
+  console.log(orderSet);
+  orderSet.delete('Risotto');
+  console.log(orderSet);
+  
+  for (const order of orderSet) console.log(order);
+  
+  // Example
+  const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+  const staffUnique = [...new Set(staff)];
+  console.log(staff);
+console.log(staffUnique);
+console.log(
+  new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size
+  );
+  
+  console.log(new Set('rutaklimaviciute').size);
+  */
 const weekdays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 const openingHours = {
   [weekdays[3]]: {
@@ -352,91 +423,47 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
-/*
 // **************************************
-// 08 - OPTIONAL CHAINING (?.)
+// 12 - NEW OPERATIONS TO MAKE SETS USEFUL
 // **************************************
-if (restaurant.openingHours && restaurant.openingHours.mon)
-  console.log(restaurant.openingHours.mon.open);
-
-// with optional chaining
-console.log(restaurant.openingHours.mon?.open);
-console.log(restaurant.openingHours?.mon?.open);
-
-// Example
-const days = ['Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat', 'Sun'];
-for (const day of days) {
-  const open = restaurant.openingHours[day]?.open ?? 'closed';
-  console.log(`On ${day}, we open at ${open}`);
-}
-
-// Methods
-console.log(restaurant.order?.(0, 1) ?? 'Method does not exist');
-console.log(restaurant.risoto?.(0, 1) ?? 'Method does not exist');
-
-// Arrays
-const users = [{ name: 'ruta', lastName: 'Klimaviciute' }];
-console.log(users[0]?.name ?? 'User array empty');
-console.log(users[2]?.name ?? 'User array empty');
-*/
-/*
-// **************************************
-// 09 - LOOPING OBJECTS: OBJECT KEYS, VALUES, AND ENTRIES
-// **************************************
-// property NAMES
-const properties = Object.keys(openingHours);
-console.log(properties);
-let openStr = `We are open ${properties.length} days: `;
-for (const day of Object.keys(openingHours)) {
-  openStr += `${day}${properties[properties.length - 1] !== day ? `,` : `.`} `;
-}
-console.log(openStr);
-
-// Property VALUES
-const values = Object.values(openingHours);
-console.log(values);
-
-// Entire object
-const entries = Object.entries(openingHours);
-console.log(entries);
-
-for (const [key, { open, close }] of entries) {
-  console.log(`On ${key} we open at ${open} and close at ${close}.`);
-}
-*/
-
-/*
-// **************************************
-// 10 - SETS
-// **************************************
-const orderSet = new Set([
-  'Pasta',
-  'Pizza',
-  'Pizza',
-  'Risotto',
-  'Pasta',
-  'Pizza',
+const italianFoods = new Set([
+  'pasta',
+  'gnocchi',
+  'tomatoes',
+  'olive oil',
+  'garlic',
+  'basil',
 ]);
-console.log(new Set('Ruta'));
-console.log(orderSet.size);
-console.log(orderSet.has('Bread'));
-console.log(orderSet.has('Pizza'));
-orderSet.add('Garlic Bread');
-orderSet.add('Garlic Bread');
-console.log(orderSet);
-orderSet.delete('Risotto');
-console.log(orderSet);
 
-for (const order of orderSet) console.log(order);
+const mexicanFoods = new Set([
+  'tortillas',
+  'beans',
+  'rice',
+  'tomatoes',
+  'avocado',
+  'garlic',
+]);
 
-// Example
-const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
-const staffUnique = [...new Set(staff)];
-console.log(staff);
-console.log(staffUnique);
-console.log(
-  new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size
-);
+// SET OPERATOR 1
+const commonFoods = italianFoods.intersection(mexicanFoods);
+// console.log('Intersection:', commonFoods);
+// console.log([...commonFoods]);
 
-console.log(new Set('rutaklimaviciute').size);
-*/
+// SET OPERATOR 2
+const italianMexicanFusion = italianFoods.union(mexicanFoods);
+// console.log('Union:', italianMexicanFusion);
+const italianMexicanFusion2 = [...new Set([...italianFoods, ...mexicanFoods])];
+// console.log(italianMexicanFusion2);
+
+// SET OPERATOR 3
+const uniqueItalianFoods = italianFoods.difference(mexicanFoods);
+const uniqueMexicanFoods = mexicanFoods.difference(italianFoods);
+// console.log('Difference:', uniqueItalianFoods);
+// console.log('Difference:', uniqueMexicanFoods);
+
+// SET OPERATOR 4
+const uniqueItalianAndMexicanFoods =
+  italianFoods.symmetricDifference(mexicanFoods);
+// console.log(uniqueItalianAndMexicanFoods);
+
+// console.log(italianFoods.isDisjointFrom(mexicanFoods));
