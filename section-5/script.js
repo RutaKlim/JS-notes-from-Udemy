@@ -467,3 +467,37 @@ const uniqueItalianAndMexicanFoods =
 // console.log(uniqueItalianAndMexicanFoods);
 
 // console.log(italianFoods.isDisjointFrom(mexicanFoods));
+
+// **************************************
+// 13 - MAPS: FUNDAMENTALS
+// **************************************
+const rest1 = new Map();
+rest1.set('name', 'Classico Italiano');
+rest1.set(1, 'Firenze, Italy');
+// console.log(rest1.set(2, 'Lisbon, Portugal'));
+
+rest1
+  .set('catagories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+  .set('open', 11)
+  .set('close', 23)
+  .set(true, 'We are open :D')
+  .set(false, 'We are closed :(');
+
+// console.log(rest1.get('name'));
+// console.log(rest1.get(false));
+
+const time = 21;
+// console.log(rest1.get(time > rest1.get('open') && time < rest1.get('close')));
+// console.log(rest1.has('catagories'));
+rest1.delete(2);
+// console.log(rest1);
+// console.log(rest1.size);
+
+const arr = [1, 2];
+rest1.set(arr, 'Test');
+rest1.set(document.querySelector('h1', 'Heading'));
+
+// console.log(rest1);
+// console.log(rest1.size);
+
+// console.log(rest1.get(arr));
