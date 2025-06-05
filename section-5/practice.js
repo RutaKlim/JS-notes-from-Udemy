@@ -45,3 +45,22 @@ console.log(
 // console.log(Object.keys(ruta.appearance));
 // console.log(Object.values(ruta.appearance));
 // console.log(Object.entries(ruta.appearance));
+
+const socks = {
+  fluffy: ['red', 'green', 'yellow'],
+  sport: {
+    nike: 1,
+    primark: 6,
+    onepiece: 3,
+  },
+};
+// console.log(Object.keys(socks));
+// console.log(Object.entries(socks));
+// console.log(Object.values(socks));
+// console.log(socks['fluffy']);
+// console.log(socks['sport'['nike']]);
+
+const socksMap = new Map(Object.entries(socks));
+// console.log(socksSportMap);
+const socksSportMap = new Map(Object.entries(socks['sport']));
+// console.log(socksMap.get('sport'));
