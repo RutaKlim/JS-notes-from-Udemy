@@ -224,18 +224,18 @@ const gameEvents = new Map([
 
 // 1.
 const events = [...new Set(gameEvents.values())];
-console.log(events);
+// console.log(events);
 // 2.
 gameEvents.delete(64);
-console.log(gameEvents);
+// console.log(gameEvents);
 // 3.
-console.log(
-  `An event happened, on average, every ${90 / gameEvents.size} minutes.`
-);
+// console.log(
+//   `An event happened, on average, every ${90 / gameEvents.size} minutes.`
+// );
 // 4.
-for (const [key, value] of gameEvents) {
-  console.log(`[${key <= 45 ? 'FIRST' : 'SECOND'} HALF] ${key}': ${value} `);
-}
+// for (const [key, value] of gameEvents) {
+//   console.log(`[${key <= 45 ? 'FIRST' : 'SECOND'} HALF] ${key}': ${value} `);
+// }
 ///////////////////////////////////////
 // Coding Challenge #4
 

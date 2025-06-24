@@ -64,3 +64,31 @@ const socksMap = new Map(Object.entries(socks));
 // console.log(socksSportMap);
 const socksSportMap = new Map(Object.entries(socks['sport']));
 // console.log(socksMap.get('sport'));
+
+const ahof = 'All-time Hall of Famer';
+// console.log(ahof.indexOf('t'));
+// console.log(ahof.indexOf('m'));
+// console.log(ahof.lastIndexOf('m'));
+// console.log(ahof.indexOf('Hall'));
+// console.log(ahof.slice(9));
+// console.log(ahof.slice(9, 13));
+
+/*
+// *****************************
+// function to find the first letter of words, then into a string in caps.
+// *****************************
+const groupName = function (name) {
+  let newName = '';
+  newName += name[0];
+  for (const [position, letter] of Object.entries(name)) {
+    if (letter == ' ') {
+      newName += name[Number(position) + 1];
+    }
+  }
+  console.log(newName.toUpperCase());
+};
+groupName('All-time Hall of Famer');
+groupName('Tommorow X Together');
+groupName('Tong Vfang Xien Qi');
+// *****************************
+*/

@@ -469,3 +469,84 @@ const firstBookMap = new Map(Object.entries(books[0]));
 // for (const [key, value] of firstBookMap) {
 //   if (typeof value === 'number') console.log(key);
 // }
+
+// WORKING WITH STRINGS - PART 1
+// 15.1
+// console.log(
+//   books[0].ISBN[6],
+//   books[0].ISBN[4],
+//   books[0].ISBN[9],
+//   books[0].ISBN[8]
+// );
+// 15.2
+const quote =
+  'A computer once beat me at chess, but it was no match for me at kick boxing';
+//console.log(quote.indexOf('chess'));
+// 15.3
+const chessWord = 'chess';
+// console.log(
+//   quote.slice(
+//     [quote.indexOf(chessWord)],
+//     [quote.indexOf(chessWord) + chessWord.length]
+//   )
+// );
+function isContributor(author) {
+  return author.lastIndexOf('(Contributor)') !== -1;
+}
+// isContributor('Julie Sussman (Contributor)');
+
+// WORKING WITH STRINGS - PART 1
+// 16.1
+const normalizeAuthorName = function (author) {
+  // making 'author' lowercase and removing '(Contributor)' if present.
+  const lowerName = author.trim().toLowerCase();
+  let justName;
+  if (lowerName.lastIndexOf('(Contributor)') === -1) {
+    justName = lowerName.slice(0, 13);
+  } else {
+    justName = lowerName;
+  }
+  // but this is only suitable for if it is the exact word, but to have it so it's any single word would be:
+  /* // this compares that there is only one space in the sentence so that there is not three if there is a bracket.
+  if (lowerName.IndexOf(' ') === author.lastIndexOf(' ')) {
+    justName = lowerName.slice(0, 13);
+  } else {
+    justName = lowerName;
+  }
+  */
+  // seperating the names
+  const lastName = justName.slice([justName.indexOf(' ') + 1]);
+  const firstName = justName.slice(0, justName.length - lastName.length);
+  // could've done: justName.slice(0, justName.IndexOf(' '))
+  // capitalizing each name's first letter
+  const capitalLastName = lastName[0].toUpperCase() + lastName.slice(1);
+  const capitalFirstName = firstName[0].toUpperCase() + lastName.slice(1);
+  // adding back together into one string
+  const fullName = capitalLastName + ' ' + capitalFirstName;
+  console.log(fullName);
+};
+// normalizeAuthorName('  JuliE sussMan (Contributor)');
+// ---
+// 16.2
+// console.log(books[1].title);
+const newBookTitle = books[1].title.replace('Programs', 'Software');
+// console.log(newBookTitle);
+// 16.3
+const logBookTheme = function (title) {
+  title = title.toLowerCase();
+  if (title.startsWith('computer')) {
+    console.log('This book is about computers');
+  } else if (title.includes('algorithms') && title.includes('structures')) {
+    console.log('This book is about algorithms and data structures');
+  } else if (
+    (title.endsWith('system') || title.endsWith('systems')) &&
+    !title.includes('operating')
+  ) {
+    console.log(
+      'This book is about some systems, but definitely not about operating systems'
+    );
+  }
+};
+// for (const book of books) {
+//   logBookTheme(book.title);
+// }
