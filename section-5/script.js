@@ -568,7 +568,7 @@ checkMiddleSeat('23C');
 checkMiddleSeat('3E');
 */
 // **************************************
-// 1 - WORKING WITH STRINGS - PART 2
+// 16 - WORKING WITH STRINGS - PART 2
 // **************************************
 // console.log(airline.toUpperCase());
 // console.log(airline.toLowerCase());
@@ -619,3 +619,14 @@ const checkBaggage = function (items) {
 // checkBaggage('I have a latop, some food and a KNIFE');
 // checkBaggage('socks and camera');
 // checkBaggage('Got some snacks and a gun for protection');
+
+// **************************************
+// 17 - WORKING WITH STRINGS - PART 3
+// **************************************
+console.log('a+very+nice+string'.split('+'));
+console.log('Ruta Klim'.split(' '));
+
+const [firstName, lastname] = 'Ruta Klim'.split(' ');
+
+const newName = ['Ms.', firstName, lastname.toUpperCase()].join(' ');
+console.log(newName);
