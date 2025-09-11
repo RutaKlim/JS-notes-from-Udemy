@@ -526,7 +526,8 @@ const normalizeAuthorName = function (author) {
   console.log(fullName);
 };
 // normalizeAuthorName('  JuliE sussMan (Contributor)');
-// ---
+
+// WORKING WITH STRINGS - PART 2
 // 16.2
 // console.log(books[1].title);
 const newBookTitle = books[1].title.replace('Programs', 'Software');
@@ -550,3 +551,43 @@ const logBookTheme = function (title) {
 // for (const book of books) {
 //   logBookTheme(book.title);
 // }
+
+// WORKING WITH STRINGS - PART 3
+// 17.1
+const bookCategories =
+  'science;computing;computer science;algorithms;business;operating systems;networking;electronics';
+function logBookCategories(books) {
+  const specificBooks = books.split(';');
+  for (let book of specificBooks) {
+    console.log(book);
+  }
+}
+// logBookCategories(bookCategories);
+// 17.2
+function getKeywordsAsString(books) {
+  const allKeywords = [];
+  for (const book of books) {
+    // for (const keyword of book['keywords']) {
+    //   allKeywords.push(keyword);
+    // }
+    // could've done:
+    allKeywords.push(...book.keywords);
+  }
+  const keywordsArr = [...new Set(allKeywords)];
+  return keywordsArr.join(';');
+}
+// console.log(getKeywordsAsString(books));
+// 17.3
+const bookChapters = [
+  ['The Basics', 14],
+  ['Sorting', 254],
+  ['Searching', 372],
+  ['Graphs', 526],
+  ['Strings', 706],
+];
+function logBookChapters(chapters) {
+  for (const [name, number] of chapters) {
+    console.log(name.padEnd(20, '_') + ' ' + number);
+  }
+}
+// logBookChapters(bookChapters);

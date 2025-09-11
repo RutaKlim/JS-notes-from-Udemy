@@ -140,7 +140,7 @@ Let's continue with our football betting app!
 
 1. Loop over the game.scored array and print each player name to the console, along with the goal number (Example: "Goal 1: Lewandowski")
 2. Use a loop to calculate the average odd and log it to the console (We already studied how to calculate averages, you can go check if you don't remember)
-3. Print the 3 odds to the console, but in a nice formatted way, exaclty like this:
+3. Print the 3 odds to the console, but in a nice formatted way, exactly like this:
       Odd of victory Bayern Munich: 1.33
       Odd of draw: 3.25
       Odd of victory Borrussia Dortmund: 6.5
@@ -163,6 +163,7 @@ for (const player of game.scored) {
   }
   wrong way */
 /*
+// not using Object.entries(game.scored) because it's an array not an object.
 for (const [index, player] of game.scored.entries()) {
   console.log(`Goal ${index + 1}: ${player}`);
 }
@@ -246,9 +247,9 @@ The input will come from a textarea inserted into the DOM (see code below), and 
 
 THIS TEST DATA (pasted to textarea)
 underscore_case
- first_name
+first_name
 Some_Variable 
-  calculate_AGE
+calculate_AGE
 delayed_departure
 
 SHOULD PRODUCE THIS OUTPUT (5 separate console.log outputs)
@@ -267,3 +268,35 @@ Afterwards, test with your own test data!
 
 GOOD LUCK 😀
 */
+
+document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement('button'));
+const text = document.querySelector('textarea').value;
+
+// when button clicked the text area is used
+document.querySelector('button').addEventListener('click', function () {
+  // retrieve text from text area
+  const text = document.querySelector('textarea').value;
+  // split words from paragraphs
+  const splitWords = text.split('\n');
+  // lower and capitalise first letter for each word
+  for (const [index, word] of splitWords.entries()) {
+    const sepWordsArr = word.split('_');
+    let completeSentence = '';
+    for (const sepWord of sepWordsArr) {
+      const lowerWord = sepWord.toLowerCase().trim();
+      const capWord = lowerWord.replace(
+        lowerWord[0],
+        lowerWord[0].toUpperCase()
+      );
+      // add the words together
+      completeSentence += capWord;
+    }
+    // the first letter will be cap but you want lower
+    completeSentence = completeSentence.replace(
+      completeSentence[0],
+      completeSentence[0].toLowerCase()
+    );
+    console.log(completeSentence.padEnd(20, ' ') + '✅'.repeat(index + 1));
+  }
+});

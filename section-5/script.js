@@ -1,9 +1,5 @@
 'use strict';
 
-// Data needed for a later exercise
-const flights =
-  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
-
 /*
 // Data needed for first part of the section
 const restaurant = {
@@ -589,7 +585,7 @@ const normalEmail = loginEmail.toLowerCase().trim();
 
 // replacing
 const priceGB = '£12,345';
-const priceUS = priceGB.replace('£', '$').replace(',', '.');
+const priceUS = priceGB.replace('£', '$').replaceAll(',', '.');
 // console.log(priceUS);
 
 const announcement =
@@ -623,10 +619,61 @@ const checkBaggage = function (items) {
 // **************************************
 // 17 - WORKING WITH STRINGS - PART 3
 // **************************************
-console.log('a+very+nice+string'.split('+'));
-console.log('Ruta Klim'.split(' '));
+// console.log('a+very+nice+string'.split('+'));
+// console.log('Ruta Klim'.split(' '));
 
+// split
 const [firstName, lastname] = 'Ruta Klim'.split(' ');
 
+// join - the join ___ is the opposite of split as it merges multiple strings into one string with a given speraratoer ( in this case; a space)
 const newName = ['Ms.', firstName, lastname.toUpperCase()].join(' ');
-console.log(newName);
+// console.log(newName);
+
+function capitalizeName(fullName) {
+  const splitName = fullName.split(' ');
+  let capitalizedName = [];
+  for (let name of splitName) {
+    capitalizedName.push(name[0].toUpperCase() + name.slice(1));
+    // can also do:
+    //capitalizedName.push(name.replace(name[0], name[0].toUpperCase()));
+  }
+  return capitalizedName.join(' ');
+}
+
+const singer = 'jessica shy';
+// console.log(capitalizeName(singer));
+
+// Padding:
+const message = 'Go to gate 23!';
+// console.log(message.padStart(20, '*').padEnd(30, '*'));
+// console.log('My name is Ruta!'.padStart(20, '*').padEnd(30, '*'));
+
+const maskCreditCard = function (number) {
+  const str = String(number);
+  const last = str.slice(-4);
+  return last.padStart(str.length, '*');
+};
+// console.log(maskCreditCard(755212345690));
+// console.log(maskCreditCard('454654512'));
+
+// repeat
+const btsMsg = 'BTS are back! ';
+// console.log(btsMsg.repeat(6));
+
+const planesInLine = function (n) {
+  console.log(`There are ${n} planes in line ${'✈️'.repeat(n)}`);
+};
+// planesInLine(3);
+// planesInLine(5);
+
+// **************************************
+// 18 - STRING METHODS PRACTICE
+// **************************************
+// Data needed for a later exercise
+const flights =
+  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
+
+// should look like:  formatted as right-to-left
+// Delayed Departure from FAO to TXL (11h25)
+//           Arrival from BRU to FAO (11h45)
+// etc...

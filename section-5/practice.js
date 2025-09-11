@@ -75,7 +75,7 @@ const ahof = 'All-time Hall of Famer';
 
 /*
 // *****************************
-// function to find the first letter of words, then into a string in caps.
+// Function to find the first letter of words, then into a string in caps.
 // *****************************
 const groupName = function (name) {
   let newName = '';
@@ -85,10 +85,10 @@ const groupName = function (name) {
       newName += name[Number(position) + 1];
     }
   }
-  console.log(newName.toUpperCase());
+  return newName.toUpperCase());
 };
-groupName('All-time Hall of Famer');
-groupName('Tommorow X Together');
-groupName('Tong Vfang Xien Qi');
+console.log(groupName('All-time Hall of Famer'));
+console.log(groupName('Tommorow X Together'));
+console.log(groupName('Tong Vfang Xien Qi'));
 // *****************************
 */
