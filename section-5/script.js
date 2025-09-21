@@ -671,9 +671,45 @@ const planesInLine = function (n) {
 // **************************************
 // Data needed for a later exercise
 const flights =
-  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
+  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;uk93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
 // should look like:  formatted as right-to-left
 // Delayed Departure from FAO to TXL (11h25)
 //           Arrival from BRU to FAO (11h45)
 // etc...
+function readableFlightOutput(string) {
+  const sepLinesArr = string.split('+');
+
+  // constructing each sentence
+  for (let sepLine of sepLinesArr) {
+    let [action, fromLoc, toLoc, flightTime] = sepLine.split(';');
+    // action
+    action = action.replaceAll('_', ' ');
+
+    // fromLoc and toLoc func
+    // i created this function because they did it as only the first 3 letters but what if it was 'UK'. That's only 2 letters, so I would ONLY take the letters.
+    function flightLocCut(string) {
+      let counter = 0;
+      for (let value of string) {
+        if (Number(value) || value === '0') {
+          break;
+        } else {
+          counter++;
+        }
+      }
+      return string.slice(0, counter).toUpperCase();
+    }
+
+    // fromLoc
+    fromLoc = flightLocCut(fromLoc);
+    // toLoc
+    toLoc = flightLocCut(toLoc);
+    // flight time
+    flightTime = flightTime.replace(':', 'h');
+
+    const string =
+      `${action} from ${fromLoc} to ${toLoc} (${flightTime})`.padStart(50, ' ');
+    console.log(string);
+  }
+}
+readableFlightOutput(flights);
